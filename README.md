@@ -1,6 +1,7 @@
 # Vue Workshop
 
 > A workshop to learn Vue and Vuex.
+> Example : https://julienusson.github.io/vue-workshop/
 
 ## Start project 
 
