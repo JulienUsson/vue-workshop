@@ -6,18 +6,27 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex';
 import List from './List';
 
 export default {
   data() {
     return {
-      task: '',
-      items: [],
+      task: ''
     };
   },
+  computed: mapState([
+    'items'
+  ]),
   methods: {
+    ...mapMutations([
+      'addItem',
+    ]),
     addTask() {
-      this.items = [...this.items, this.task];
+      if(this.task === '') {
+        return;
+      }
+      this.addItem(this.task);
       this.task = '';
     },
   },
