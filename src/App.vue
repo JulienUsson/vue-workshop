@@ -19,15 +19,22 @@
 </template>
 
 <script>
-import TodoList from './components/TodoList';
+import { mapActions } from "vuex";
+import TodoList from "./components/TodoList";
 
 export default {
   components: {
-    TodoList,
+    TodoList
   },
-}
+  methods: {
+    ...mapActions(["fetchItem"])
+  },
+  created: function() {
+    this.fetchItem();
+  }
+};
 </script>
 
 <style lang="stylus">
-  @import './stylus/main'
+@import './stylus/main';
 </style>
